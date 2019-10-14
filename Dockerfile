@@ -20,7 +20,6 @@ RUN docker-php-ext-install \
     zip \
     pdo \
     gd \
-    imagick \
     pdo_mysql
 
 # Install pecl extensions
