@@ -9,6 +9,7 @@ RUN apt-get update && \
             zlib1g-dev \
             libpng-dev \
             libssl-dev \
+            imagemagick \
         --no-install-recommends && \
         apt-get clean && \
         rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
@@ -19,14 +20,12 @@ RUN docker-php-ext-install \
     zip \
     pdo \
     gd \
+    php-imagick \
     pdo_mysql
 
 # Install pecl extensions
 RUN pecl install mongodb && \
     docker-php-ext-enable mongodb
-
-# Install ImageMagick
-RUN apk --update add imagemagick
 
 # Configure php
 RUN echo "date.timezone = UTC" >> /usr/local/etc/php/php.ini
