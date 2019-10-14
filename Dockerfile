@@ -25,6 +25,9 @@ RUN docker-php-ext-install \
 RUN pecl install mongodb && \
     docker-php-ext-enable mongodb
 
+# Install ImageMagick
+RUN apk --update add imagemagick
+
 # Configure php
 RUN echo "date.timezone = UTC" >> /usr/local/etc/php/php.ini
 
