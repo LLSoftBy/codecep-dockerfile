@@ -9,8 +9,9 @@ RUN apt-get update && \
             zlib1g-dev \
             libpng-dev \
             libssl-dev \
-            imagemagick \
+	    libmagickwand-dev \
         --no-install-recommends && \
+	    pecl install imagick && docker-php-ext-enable imagick && \
         apt-get clean && \
         rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
