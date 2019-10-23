@@ -10,6 +10,7 @@ RUN apt-get update && \
             libpng-dev \
             libssl-dev \
 	    libmagickwand-dev \
+	    imagemagick \
         --no-install-recommends && \
 	    pecl install imagick && docker-php-ext-enable imagick && \
         apt-get clean && \
