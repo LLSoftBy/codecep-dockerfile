@@ -11,8 +11,13 @@
         "reportportal/basic": "1.0.x-dev",
         "reportportal/codeception": "1.0.x-dev",
         "ext-json": "*",
-        "ext-imagick": "*"
+        "ext-imagick": "*",
+        "ext-curl": "*",
+        "ext-simplexml": "*",
+        "ext-zip": "*",
+        "ext-dom": "*"
     },
     "require-dev": {
+        "ext-gd": "*"
     }
 }
