@@ -10,14 +10,18 @@ RUN apt-get update && \
             libssl-dev \
             libzip-dev \
             unzip \
+            libmagickwand-dev \
+            imagemagick \
         --no-install-recommends && \
+        pecl install imagick && docker-php-ext-enable imagick && \
         apt-get clean && \
         rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Install php extensions
 RUN docker-php-ext-install \
     bcmath \
-    zip
+    zip \
+    gd
 
 # Install pecl extensions
 RUN pecl install \
@@ -45,7 +49,7 @@ WORKDIR /repo
 
 # Install vendor
 COPY ./composer.json /repo/composer.json
-RUN composer install --prefer-dist --optimize-autoloader
+RUN composer install --prefer-dist --no-interaction --optimize-autoloader --apcu-autoloader
 
 # Add source-code
 COPY . /repo

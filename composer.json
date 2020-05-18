@@ -4,7 +4,7 @@
         "redcomponent/teststatistics": "dev-master",
         "codeception/robo-paracept": "^0.3.1",
         "codeception/codeception": "*",
-        "phpoffice/phpspreadsheet": "^1.0",
+        "phpoffice/phpspreadsheet": "1.12.0",
         "aws/aws-sdk-php": "^3.50",
         "smalot/pdfparser": "*",
         "flow/jsonpath": "^0.4.0",
