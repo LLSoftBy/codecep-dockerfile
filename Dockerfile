@@ -37,7 +37,7 @@ ENV COMPOSER_ALLOW_SUPERUSER=1
 RUN curl -sS https://getcomposer.org/installer | php -- \
         --filename=composer \
         --install-dir=/usr/local/bin
-RUN composer global require --prefer-dist --no-interaction --optimize-autoloader --apcu-autoloader \
+RUN composer global require --optimize-autoloader \
         "hirak/prestissimo"
 
 # Prepare application
@@ -45,7 +45,7 @@ WORKDIR /repo
 
 # Install vendor
 COPY ./composer.json /repo/composer.json
-RUN composer install --prefer-dist --no-interaction --optimize-autoloader --apcu-autoloader
+RUN composer install --prefer-dist --optimize-autoloader
 
 # Add source-code
 COPY . /repo
