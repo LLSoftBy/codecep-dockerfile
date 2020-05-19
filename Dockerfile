@@ -21,7 +21,9 @@ RUN apt-get update && \
 RUN docker-php-ext-install \
     bcmath \
     zip \
-    gd
+    pdo \
+    gd \
+    pdo_mysql
 
 # Install pecl extensions
 RUN pecl install \
