@@ -44,6 +44,9 @@ RUN curl -sS https://getcomposer.org/installer | php -- \
 RUN composer global require --optimize-autoloader \
         "hirak/prestissimo"
 
+RUN curl -LsS http://codeception.com/codecept.phar -o /usr/local/bin/codecept
+RUN chmod a+x /usr/local/bin/codecept
+
 # Prepare application
 WORKDIR /repo
 
